@@ -35,7 +35,7 @@ jobs:
       
       #Deploy to surge
       - name: deploy to surge
-        run: surge ./ saad_module01.surge.sh --token ${{secrets.SURGE_LEARNING}}
+        run: surge ./ saad_module02.surge.sh --token ${{secrets.SURGE_LEARNING}}
          
 
 
