@@ -21,7 +21,11 @@ function showSuccess(input) {
 
 
 }
-
+// Email validation function
+function isValidEmail(email){
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
 
 // This is an event listener for the form on submit.
@@ -35,6 +39,9 @@ form.addEventListener('submit',function(e) {
     // checking email.
     if(email.value === '') {
         showError(email,'email is required');
+    }else if (!isValidEmail(email.value)) {
+        showError(email,'Invalid email');
+
     }else {
         showSuccess(email);
     }
