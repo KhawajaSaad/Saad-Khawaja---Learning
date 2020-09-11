@@ -1,5 +1,5 @@
 :root {
-    --primary-color: lightyellow;
+    --primary-color: yellow;
 }
 *{
     box-sizing: border-box;
@@ -32,8 +32,10 @@ p{
     color: black;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 10px 10px;
+    border 1px solid var{--primary-color};
+    font-style: bold;
 }
 .money-img{
     width: 150px;
@@ -67,4 +69,10 @@ p{
     color: var(--primary-color);
     font-size: 24px;
     padding: 0 10px;
+}
+
+select:focus, input:focus, button:focus{
+    outline:0;
+
+
 }
