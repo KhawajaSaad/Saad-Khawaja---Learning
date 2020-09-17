@@ -1,0 +1,13 @@
+body{
+    background-color:rgba(146, 190, 205, 0.4);
+    background-image: url("root-images/background.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #1564e4;
+
+}
+
