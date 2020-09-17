@@ -29,12 +29,8 @@ function calculate(){
 // Flip Function
 function flip (){
     const placeholder = currOnepicker.value;    
-        currOnePicker.value = placeholder.value;
-        currTwoPicker. 
-        
-
-
-
+        currOnePicker.value = currTwoPicker.value;
+        currTwoPicker.value = placeholder.value;
 }
 
 
