@@ -26,11 +26,29 @@ function calculate(){
         });
 }
 
+// Function if second currency is editted
+
+function calculate2(){
+    const currencyOneCode = currOnePicker.value;
+    const currencyTwoCode = currTwoPicker.value;
+    
+    fetch(`https://v6.exchangerate-api.com/v6/64df51924f54b89bc52287c2/latest/${currencyOneCode}`)
+        .then(res => res.json()) 
+        .then( data => {
+            //Get exchange rate from API Data
+            const exchangeRate = data.conversion_rates[`${currencyTwoCode}`];
+            //Apply conversion rate and update amount.
+            currOneAmount.value = (currTwoAmount.value / exchangeRate).toFixed(2);
+        });
+}
+
 // Flip Function
 function flip (){
-    const placeholder = currOnepicker.value;    
+    const placeHolder = currOnePicker.value;    
         currOnePicker.value = currTwoPicker.value;
-        currTwoPicker.value = placeholder.value;
+        currTwoPicker.value = placeHolder;
+        calculate();
+        console.log(currTwoPicker,currOnePicker);
 }
 
 
@@ -40,6 +58,6 @@ function flip (){
 currOnePicker.addEventListener('change',calculate);
 currTwoPicker.addEventListener('change',calculate);
 currOneAmount.addEventListener('input', calculate);
-currTwoAmount.addEventListener('input', calculate);
+currTwoAmount.addEventListener('input', calculate2);
 flipButton.addEventListener('click',flip);
 calculate();
